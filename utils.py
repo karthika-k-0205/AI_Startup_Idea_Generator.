@@ -68,3 +68,21 @@ def generate_startup_names(base_name, n=5):
     suffixes = ["Hub", "Lab", "Genie", "Bot", "AI"]
     names = [f"{base_name}{random.choice(suffixes)}" for _ in range(n)]
     return names
+
+
+  HOW  IT IS USED IN MAIN app.py
+from utils import generate_startup_idea, save_ideas_to_csv, generate_startup_names
+
+# Generate ideas
+ideas = generate_startup_idea(industry, technology, skills, audience)
+
+# Show ideas in Streamlit
+for idea in ideas:
+    st.write(idea)
+
+# Save ideas
+save_ideas_to_csv(ideas)
+
+# Generate extra name suggestions
+names = generate_startup_names(ideas[0]['Startup Name'])
+st.write("Suggested Names:", names)
