@@ -1,0 +1,66 @@
+AI Startup Idea Generator - Sample Assets Folder Information
+
+Folder Structure:
+AI_Startup_Idea_Generator/
+│── app.py
+│── utils.py
+│── requirements.txt
+│── assets/
+│    ├── logo.png                # Project logo
+│    ├── background.jpg          # Optional background for Streamlit app
+│    ├── icons/
+│    │    ├── idea.png           # Icon for idea generation button
+│    │    ├── user.png           # Icon for user input section
+│    │    └── ai.png             # Icon for AI/technology section
+│    └── data/
+│         └── startup_ideas.csv  # CSV to save generated ideas
+
+Sample Files Description:
+
+1. logo.png
+
+* A small image with text “AI Startup Idea Generator” or generic AI icon.
+* Recommended size: 150x150px
+* Can be created using Canva or downloaded from Flaticon.
+
+2. background.jpg (Optional)
+
+* AI-themed or startup-themed image.
+* Can be downloaded from Unsplash or Pexels.
+
+3. Icons (inside assets/icons/)
+
+* idea.png: Icon for "Generate Idea" button.
+* user.png: Icon next to user input form.
+* ai.png: Icon for AI/technology section.
+* Recommended size: 50x50px, PNG format.
+* Free icons from Flaticon or Icons8.
+
+4. Data Folder & CSV (assets/data/startup_ideas.csv)
+
+* Columns:
+  Startup Name,Problem Statement,Solution,Key Features,Technology Stack,Business Model,Pitch Summary
+* Leave empty initially; the app will save generated ideas.
+
+How to Use in Streamlit:
+
+import streamlit as st
+import pandas as pd
+
+# Display logo
+
+st.image("assets/logo.png", width=150)
+
+# Display button with icon
+
+st.image("assets/icons/idea.png", width=50)
+if st.button("Generate Idea"):
+st.write("Idea Generated!")
+
+# Load saved ideas CSV
+
+try:
+ideas_df = pd.read_csv("assets/data/startup_ideas.csv")
+st.dataframe(ideas_df)
+except FileNotFoundError:
+st.write("No saved ideas yet.")
