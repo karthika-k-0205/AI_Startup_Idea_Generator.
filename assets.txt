@@ -13,7 +13,7 @@ AI_Startup_Idea_Generator/
 │    │    ├── user.png           # Icon for user input section
 │    │    └── ai.png             # Icon for AI/technology section
 │    └── data/
-│         └── startup_ideas.csv  # CSV to save generated ideas
+│        
 
 Sample Files Description:
 
@@ -57,10 +57,5 @@ st.image("assets/icons/idea.png", width=50)
 if st.button("Generate Idea"):
 st.write("Idea Generated!")
 
-# Load saved ideas CSV
 
-try:
-ideas_df = pd.read_csv("assets/data/startup_ideas.csv")
-st.dataframe(ideas_df)
-except FileNotFoundError:
-st.write("No saved ideas yet.")
+
